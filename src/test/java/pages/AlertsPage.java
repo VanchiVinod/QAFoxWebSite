@@ -18,11 +18,32 @@ public class AlertsPage {
 	
 	//Elements
 	@FindBy(xpath = "//span[text()='Alerts']") WebElement Alerts;
+	@FindBy(xpath = "//button[@id='alertButton']") WebElement Simple_Alert_button;
+	@FindBy(xpath = "//button[@id='timerAlertButton']") WebElement Timer_Alert_button;
+	@FindBy(xpath = "//button[@id='confirmButton']") WebElement Confirm_button;
+	@FindBy(xpath = "//button[@id='promtButton']") WebElement Prompt_button;
 	
 	//Methods
 	public void Select_Alert() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", Alerts);
+	}
+	
+	public void SimpleAlert() {
+		Simple_Alert_button.click();
+	}
+	
+	public void TimerAlert() {
+		Timer_Alert_button.click();
+	}
+	
+	public void ConfirmAlert() {
+		Confirm_button.click();
+	}
+	
+	public void PromptAlert() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Prompt_button);
 	}
 
 }

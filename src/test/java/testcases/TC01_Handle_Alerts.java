@@ -1,5 +1,6 @@
 package testcases;
 
+import org.openqa.selenium.Alert;
 import org.testng.annotations.Test;
 
 import baseclass.base;
@@ -16,6 +17,25 @@ public class TC01_Handle_Alerts extends base {
 		AlertsPage ap = new AlertsPage(driver);
 		ap.Select_Alert();
 		Thread.sleep(1000);
+		
+		ap.SimpleAlert();
+		Alert alert = driver.switchTo().alert();
+		alert.accept();
+		Thread.sleep(1000);
+		
+		ap.TimerAlert();
+		Thread.sleep(5000);
+		alert.accept();
+		Thread.sleep(1000);
+		
+		ap.ConfirmAlert();
+		alert.dismiss();
+		Thread.sleep(1000);
+		
+		ap.PromptAlert();
+		alert.sendKeys("Vinod");
+		alert.accept();
+		
 	}
 
 }
