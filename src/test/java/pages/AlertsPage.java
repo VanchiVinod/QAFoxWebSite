@@ -34,11 +34,13 @@ public class AlertsPage {
 	}
 	
 	public void TimerAlert() {
-		Timer_Alert_button.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Timer_Alert_button);
 	}
 	
 	public void ConfirmAlert() {
-		Confirm_button.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Confirm_button);
 	}
 	
 	public void PromptAlert() {

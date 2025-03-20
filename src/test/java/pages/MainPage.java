@@ -20,10 +20,16 @@ public class MainPage {
 	
 	//Elements
 	@FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']") WebElement Alerts;
+	@FindBy(xpath = "//h5[text()='Book Store Application']") WebElement BookStoreLink;
 	
 	//Methods
 	public void Click_on_Alerts() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", Alerts);
+	}
+	
+	public void Click_BootStore() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", BookStoreLink);
 	}
 }
